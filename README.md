@@ -4,7 +4,9 @@ Document Library - 文档库
 > Recently revised in **2019-4-1 20:08:20**
 * Here is the teachat's learning and working experience document on programming. If you have doubts about this, please send an email to teachat8@gmail.com.
 * 这里存放了teachat的学习、工作中关于编程的经验文档。如果你对此有疑惑，请发邮件到teachat8@gmail.com。
+
 <br>
+
 # 一 前言
 &emsp;本文档库始建于 `2019-4-1`，开始目的是做学习笔记。  
 &emsp;建文档库的初始目的是记录一下 **teachat** 的在折腾学习某个黑科技的时候的操作笔记，如果你学习而不写文章、不做笔记，某天你突发奇想，又要用到某个之前你用过的黑科技……那样的话，还需要百度或者 google 一遍，太累了！
