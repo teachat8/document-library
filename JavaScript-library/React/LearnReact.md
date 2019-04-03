@@ -77,8 +77,12 @@ redux-thunk：可以使actionCreators不仅可以返回对象，还可以返回�
 
 redux-saga：功能强大，有很多api如：takeEvery、put、call、takeLatest。它是将异步代码拆分到单独的sagas.js文件中进行管理。
 
+redux-immutable: 不可修改的State,使用state.getIn(['a', 'b'])读取store中的数据；使用fromJS(x) 将x变成immutable类型的数据。使用state.set('key', value)修改store中的一条数据。使用state.merge({a: a, b: b})修改store中的多条数据。
 
+react页面路由参数的传递 第一种：动态路由 <Link to={'/detail/3'} /> 路由配置Route组件path='/detail/:id'，进入详情页拿到列表页面路由传递的参数: this.props.match.params.id。
+第二种： <Link to={'/detail?id=3'} /> 路由配置Route组件path='/detail/'，进入详情页拿到列表页面路由传递的参数: this.props.location.search.split('=')[1]
 
+react组件传入dangerouslySetInnerHTML={{__html: content}}属性，可以使组件内显示的内容不被转义。
 
 <br>
 
