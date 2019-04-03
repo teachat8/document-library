@@ -2,7 +2,7 @@ React
 ===
 
 > create by **teachat** on **2019-4-1 10:10:36**   
-> Recently revised in **2019-4-1 10:30:33**
+> Recently revised in **2019-4-3 15:46:55**
 
 <br>
 
@@ -10,6 +10,31 @@ React 16.0以上使用PureComponent底层实现了shouldComponentUpdate，提升
 <br>
 父组件向子组件传递属性，子组件通过props接受父组件传递过来的参数。
 子组件传递数据给父组件，子组件就要执行父组件传递过来的方法。
+
+<br>
+React.Fragment 是占位符，让最外层的div隐藏掉。
+
+<br>
+
+组件的生命周期：
+
+生命周期函数是指在某一个时刻组件会自动调用执行的函数
+
+Mount:
+constructor(): constructor构造函数只执行一次，props和state的初始化,以及this绑定
+componentWillMount(): 在组件即将被挂载到页面的时刻自动执行
+render()： 当组件的state或者props发生改变的时候，它的render函数就会重新执行
+componentDidMount(): 组件被挂载到页面之后，自动被执行。（进行ajax请求，事件的绑定）
+
+Update:
+componentWillReceiveProps(): 一个组件要从父组件接受参数,如果这个组件第一次存在于父组件中，不会执行,如果这个组件之前已经存在于父组件中，才会执行。
+shouldComponentUpdate() : 组件被更新之前，它会自动被执行。返回一个boolean值，true表示组件要更新，false表示组件不要更新。
+componentWillUpdate(): 组件被更新之前，它会自动被执行，但是它在shouldComponentUpdate之后,如果shouldComponentUpdate返回true它才执行,如果返回false，这个函数就不会被执行了。
+componentDidUpdate(): 组件更新完成之后，它会被执行。
+
+UnMount:
+componentWillUnmount(): 当这个组件即将被从页面中剔除的时候，会被执行。 (清除定时器和移出绑定的事件)
+
 <br>
 没有Redux：组件之间共享状态比较复杂。
 <br>
@@ -35,6 +60,11 @@ store是唯一的
 只有store能够改变自己的内容
 
 reducer必须是纯函数
+
+reducer 可以接受state，但是绝不能修改state
+
+纯函数指的是，给定固定的输入，就一定会有固定的输出，而且不会有任何副作用(对传入的参数进行修改)
+
 <br>
 
 Redux中间件总结：
