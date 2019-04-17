@@ -1,0 +1,33 @@
+.wrapper {
+  height: 1000px;
+}
+.footer {
+  border: 1px solid red;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.footer ul li a {
+  display: block;
+  height: 43px;
+  text-decoration: none;
+}
+.footer ul li a .icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.footer ul li a .home-icon {
+  width: 22px;
+  height: 22px;
+  background-image: url('./imgs/icon/tab_item_home_active.svg');
+  background-size: contain;
+
+}
