@@ -1,33 +1,301 @@
-.wrapper {
-  height: 1000px;
+body {
+  margin: 0;
 }
-.footer {
-  border: 1px solid red;
+.wrapper {
+  margin-bottom: 64px;
+}
+/* 顶部search区域 */
+.wrapper .header {
+  background-image: linear-gradient(90deg,#0af,#0085ff);
+}
+.wrapper .header .info {
+  color: #fff;
+  height: 40px;
+  padding: 6px 20px;
+}
+.wrapper .header .info .location {
+  width: 15px;
+  height: 18px;
+  vertical-align: middle;
+}
+.wrapper .header .info .title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.wrapper .header .info .arrow {
+  width: 8px;
+  height: 4px;
+  vertical-align: middle;
+}
+.wrapper .header .search {
   height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .header .search .search-box {
+  width: 431px;
+  height: 42px;
+  line-height: 42px;
+  background: #fff;
+  color: #999;
+  border-radius: 2px;
+  text-align: center;
+}
+.wrapper .header .search .search-box .icon-search {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+.wrapper .header .search .search-box .title {
+  vertical-align: middle;
+  font-size: 16px;
+}
+.wrapper .swipe {
+  height: 208px;
+  box-sizing: border-box;
+}
+.wrapper .swipe .row {
+  display: flex;
+  text-align: center;
+}
+.wrapper .swipe .row a {
+  flex: 1;
+  display: block;
+  text-decoration: none;
+  padding: 8px 0;
+}
+.wrapper .swipe .row a img {
+  width: 55px;
+  height: 55px;
+  display: block;
+  margin: 0 auto 2px;
+}
+.wrapper .swipe .row a div {
+  color: #666;
+  font-size: 14px;
+}
+/* 推荐区域 */
+.wrapper .container {
+  padding: 0 10px;
+}
+.wrapper .container .recommend {
+  background: linear-gradient(0deg,#f4f4f4 5%,#fafafa 95%);
+  height: 130px;
+  position: relative;
+  margin-bottom: 3px;
+}
+.wrapper .container .recommend .left {
+  padding: 10px 20px;
+}
+.wrapper .container .recommend .left .title {
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
+}
+.wrapper .container .recommend .left .desc {
+  color: #777;
+  font-size: 16px;
+}
+.wrapper .container .recommend .left .buy {
+  color: #af8260;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.wrapper .container .recommend .right {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 166px;
+  height: 110px;
+}
+/* banner区域 */
+.wrapper .container .banner {
+  height: 108px;
+  position: relative;
+  margin-bottom: 5px;
+}
+.wrapper .container .banner img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .container .banner div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #eee;
+  width: 64px;
+  height: 22px;
+  border-radius: 11px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* 商家列表区域 */
+.wrapper .shop {
+} 
+.wrapper .shop .title-bar {
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  font-size: 18px;
+}
+.wrapper .shop .title-bar::before {
+  content:'';
+  display: inline-block;
+  background-color: #999;
+  width: 25px;
+  height: 1px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.wrapper .shop .title-bar::after {
+  content:'';
+  display: inline-block;
+  background-color: #999;
+  width: 25px;
+  height: 1px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.wrapper .shop .filter-bar {
+  height: 47px;
+  display: flex;
+}
+.wrapper .shop .filter-bar div {
+  width: 110px;
+  height: 47px;
+  flex: 1;
+  text-align: center;
+  line-height: 47px;
+  vertical-align: middle;
+  color: #666;
+}
+.wrapper .shop .filter-bar .filter-sort img {
+  width: 7px;
+  height: 4px;
+  vertical-align: middle;
+}
+.wrapper .shop .filter-bar .filter-more img {
+  width: 14px;
+  height: 14px;
+}
+/* 结果区域 */
+.wrapper .shop .shop-list-container {
+  height: 381px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.wrapper .shop .shop-list-container img {
+  width: 235px;
+  height: 235px;
+  margin-bottom: 5px;
+}
+.wrapper .shop .shop-list-container .noresult {
+  color: #6a6a6a;
+  font-weight: 400;
+  font-size: 20px;
+}
+.wrapper .shop .shop-list-container .searchshop {
+  color: #999;
+  font-size: 16px;
+  margin: 10px 0;
+}
+.wrapper .shop .shop-list-container .login {
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #56d176;
+  color: #fff;
+  text-align: center;
+  width: 141px;
+  height: 64px;
+  line-height: 64px;
+}
+.wrapper .back-top {
+  position: fixed;
+  right: 10px;
+  bottom: 84px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: solid 1px #999;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .back-top img {
+  width: 24px;
+  height: 24px;
+}
+/* 底部tabbar区域 */
+.footer {
+  height: 62px;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: white;
+  border-top: solid 1px rgb(236, 236, 236);
+  box-shadow: 0 0 5px rgb(236, 234, 234);
 }
 .footer ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+}
+.footer ul li {
+  flex: 1;
+  text-align: center;
 }
 .footer ul li a {
   display: block;
   height: 43px;
   text-decoration: none;
+  padding: 10px 0;
 }
 .footer ul li a .icon {
   width: 22px;
   height: 22px;
+  font-size: 14px;
   display: block;
+  background-size: contain;
+  margin: 0 auto 2px;
+}
+.footer ul .active a .home-icon {
+  background-image: url('./imgs/icon/tab_item_home_active.svg');
 }
 .footer ul li a .home-icon {
-  width: 22px;
-  height: 22px;
-  background-image: url('./imgs/icon/tab_item_home_active.svg');
-  background-size: contain;
-
+  background-image: url('./imgs/icon/tab_item_home_normal.svg');
+}
+.footer ul .active a div {
+  font-size: 14px;
+  color: #0089dc;
+}
+.footer ul li a div {
+  color: #8e8e93
+}
+.footer ul .active a .find-icon {
+  background-image: url('./imgs/icon/tab_item_found_active.svg');
+}
+.footer ul li a .find-icon {
+  background-image: url('./imgs/icon/tab_item_found.svg');
+}
+.footer ul .active a .order-icon {
+  background-image: url('./imgs/icon/tab_item_order_active.svg');
+}
+.footer ul li a .order-icon {
+  background-image: url('./imgs/icon/tab_item_order.svg');
+}
+.footer ul .active a .my-icon {
+  background-image: url('./imgs/icon/tab_item_me_active.svg');
+}
+.footer ul li a .my-icon {
+  background-image: url('./imgs/icon/tab_item_me.svg');
 }
