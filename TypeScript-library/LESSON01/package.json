@@ -1,0 +1,14 @@
+{
+  "name": "LESSON01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "greeter.js",
+  "scripts": {
+    "build": "tsc greeter.ts",
+    "test": "node greeter.js",
+    "start": "npm run build && npm run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
