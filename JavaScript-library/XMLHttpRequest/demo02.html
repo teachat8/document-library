@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xhr</title>
+</head>
+<body>
+  <script>
+    function load(url) {
+      // 1. 创建一个新的XMLHttpRequest对象
+      let xhr = new XMLHttpRequest();
+      // 2. 建立open
+      xhr.open('GET', url);
+      // 通过相应的属性指定超时时间：如果请求在指定时间内没有成功，它就会自动取消。
+      xhr.timeout = 1000;
+      // 3. 发送请求
+      xhr.send();
+      // 接受到响应后将被执行
+      xhr.onload = function() {
+        alert(`Loaded: ${this.status} ${this.responseText}`);
+      };
+      // 出现网络错误，请求失败,将被执行
+      xhr.onerror = () => alert('Error');
+      // 请求因超时取消后将被执行
+      xhr.ontimeout = () => alert('Timeout!');
+    }
+</script>
+ <button onclick="load('https://zh.javascript.info/article/xmlhttprequest/hello.txt')">Load</button>
+ <button onclick="load('https://zh.javascript.info/article/xmlhttprequest/hello.txt?speed=0')">Load with timeout</button>
+ <button onclick="load('https://no-such-page')">Load 404</button>
+ <button onclick="load('http://example.com')">Load another domain</button>
+</body>
+</html>

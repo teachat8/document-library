@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XMLHttpRequest</title>
+</head>
+<body>
+  <script>
+    // 1. 创建一个新的XMLHttpRequest对象
+    let xhr = new XMLHttpRequest();
+
+    // 2. 建立open
+    xhr.open('GET', 'https://zh.javascript.info/article/xmlhttprequest/hello.txt',true)
+
+    // 3. 发送请求
+    xhr.send();
+
+    //取消：abort 和 timeout
+    // 中断请求
+    xhr.abort();
+
+    // 通过相应的属性指定超时时间：如果请求在指定时间内没有成功，它就会自动取消。
+    xhr.timeout = 10000;
+
+    // 4. 接受到响应后将被执行
+    xhr.onload = function() {
+      if(xhr.status != 200) {
+        console.log(xhr.status + ': ' + xhr.statusText);
+      } else {
+        console.log(xhr.responseText);
+      }
+    }
+    
+  </script>
+</body>
+</html>
