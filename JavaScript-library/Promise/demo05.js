@@ -42,3 +42,13 @@ let user = await response.json();
 
 // 对于 async/await，我们很少需要编写 promise.then/catch，但我们不应该忘记它们是基于 promise 的。因为有时（例如，在最外面的范围）我们不得不使用这些方法。Promise.all 也是一个很好的东西，它能够同时等待很多任务。
 
+
+class Waiter {
+  async wait() {
+    return await Promise.resolve(1);
+  }
+}
+
+new Waiter()
+  .wait()
+  .then(alert); // 1
