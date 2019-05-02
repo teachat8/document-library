@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xhr</title>
+</head>
+<body>
+  <button></button>
+  <script>
+    // 获取button DOM
+    var button = document.querySelector('button');
+
+    // 创建一个新的XMLHttpRequest
+    let xhr = new XMLHttpRequest();
+
+    // 创建连接，xhr.open第三个参数async默认为true异步，建立异步请求
+    xhr.open('GET', 'https://zh.javascript.info/article/xmlhttprequest/hello.txt');
+
+    // 设置请求头headers，设置以后无法撤消 setRequestHeader
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // 一旦设置了 header，它就被设置了。额外的调用会给 header 添加信息，而不会覆盖它。
+    // xhr.setRequestHeader('X-Auth', '123');
+    // xhr.setRequestHeader('X-Auth', '456');
+
+    // 获取响应头
+    console.log(xhr.getResponseHeader('Content-Type'));
+
+    // 获取所有的响应头
+    console.log(xhr.getAllResponseHeaders());
+
+    // send发出请求
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !=4 ) {
+        return;
+      }
+
+      button.innerHTML = 'Complete!';
+
+      if (xhr.status !=200) {
+        alert(xhr.status + ':' + xhr.statusText);
+      } else {
+        alert(xhr.responseText);
+      }
+    };
+
+    button.innerHTML = 'Loading...';
+    button.disabled = true;
+
+  </script>
+</body>
+</html>
