@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue 学习 - Vue.nextTick()</title>
+</head>
+<body>
+
+  <!-- 2.Vue 挂载点 - Vue 的虚拟 DOM 在这里操作到实际渲染 -->
+  <!-- 简单理解为 jQuery 的拼接字符串（并不全是）-->
+  <div id="app"></div>
+
+  <!-- 1. 引用 Vue -->
+  <!-- Vue CDN - 提供 Vue 服务 -->
+  <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
+  <!-- Vue Router CDN - 管理路由 -->
+  <script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+  <!-- Axios CDN - 调用接口 -->
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+
+  <!-- babel-polyfill -->
+  <script src="https://cdn.bootcss.com/babel-polyfill/7.4.4/polyfill.min.js"></script>
+
+  <script>
+    import mymixin from './mixins'
+
+    var App = {
+      template: `
+        <div>
+          测试mixins混入
+        </div>
+      `,
+      mixins: mymixin,
+      data: function() {
+        return {
+          message: 'goodbye',
+          bar: 'def'
+        }
+      },
+      created() {
+        console.log(this.$data);
+      },
+    };
+
+    new Vue({
+      el: document.getElementById('app'),
+      components: {
+        app: App
+      },
+      template: `<app />`
+    })
+
+
+
+  </script>
+  
+
+</body>
+</html>

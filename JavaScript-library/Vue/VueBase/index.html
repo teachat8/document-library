@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue 学习 - extends & mixins</title>
+</head>
+<body>
+
+  <!-- 2.Vue 挂载点 - Vue 的虚拟 DOM 在这里操作到实际渲染 -->
+  <!-- 简单理解为 jQuery 的拼接字符串（并不全是）-->
+  <div id="app"></div>
+
+  <!-- 1. 引用 Vue -->
+  <!-- Vue CDN - 提供 Vue 服务 -->
+  <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
+  <!-- Vue Router CDN - 管理路由 -->
+  <script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+  <!-- Axios CDN - 调用接口 -->
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+
+  <script>
+    
+    var extend = {
+      data() {
+        return {
+          number: 1
+        }
+      }
+    }
+
+    var mixin = {
+      data() {
+        return {
+          // number: 2
+        }
+      }
+    }
+
+    new Vue({
+      el: document.getElementById('app'),
+      data() {
+        return {
+          // number: 3
+        }
+      },
+      extends: extend,
+      mixins: [mixin],
+      created() {
+        /*
+        在这里不推荐同时使用 extends 与 mixins，因为会混淆
+        如果代码是这样子的，则这里输出的是 3
+        如果 new Vue 中没定义 number，则输出的是 2（mixins 中的值）
+        如果 mixins 中没定义 number，则输出的是 1（extend 中的值）
+        new Vue > mixins > extends
+        */
+        console.log(this.number)
+      }
+    })
+   
+  </script>
+  
+
+</body>
+</html>

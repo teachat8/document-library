@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue 学习 - 组件DOM元素获取</title>
+</head>
+<body>
+
+  <!-- 2.Vue 挂载点 - Vue 的虚拟 DOM 在这里操作到实际渲染 -->
+  <!-- 简单理解为 jQuery 的拼接字符串（并不全是）-->
+  <div id="app"></div>
+
+  <!-- 1. 引用 Vue -->
+  <!-- Vue CDN - 提供 Vue 服务 -->
+  <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
+  <!-- Vue Router CDN - 管理路由 -->
+  <script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+  <!-- Axios CDN - 调用接口 -->
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+
+  <script>
+    
+    var tempComponent = {
+      template: `
+        <div>我是临时组件</div>
+      `
+    };
+
+    // 全局注册组件
+    // Vue.component('temp', tempComponent);
+
+    var App = {
+      components: { // 局部注册组件
+        temp: tempComponent
+      },
+      template: `
+        <div>
+          <temp ref="temp" />
+        </div>
+      `,
+      mounted() { 
+        /*
+        装载数据之后
+        $children - 当前组件的子组件
+        $el - 当前组件DOM元素节点
+        $parent - 当前组件的父组件
+        $root - 获取 new Vue 实例
+        */
+        console.log(this.$refs.temp.$el); // <div>我是临时组件</div>
+        console.log(this.$refs.temp.$children);
+        console.log(this.$refs.temp.$parent);
+        console.log(this.$refs.temp.$root);
+      },
+    };
+
+    new Vue({
+      el: document.getElementById('app'),
+      components: {
+        app: App
+      },
+      template: `<app />`
+    })
+
+
+
+  </script>
+  
+
+</body>
+</html>
