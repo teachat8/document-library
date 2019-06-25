@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2.BFC元素能够识别浮动的子元素.html</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding-left: 20px;
+    }
+    .common-block-element {
+      display: block;
+      width: 400px;
+      border: 1px solid green;
+    }
+    .bfc {
+      overflow: auto;
+    }
+    .sub-element {
+      float: left;
+      height: 20px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <p>BFC元素：</p>
+  <div class="common-block-element bfc">
+    <div class="sub-element">浮动子元素</div>
+    <div class="sub-element">浮动子元素</div>
+    <div class="sub-element">浮动子元素</div>
+  </div>
+  <p>普通快级元素：</p>
+  <div class="common-block-element">
+    <div class="sub-element">浮动子元素</div>
+    <div class="sub-element">浮动子元素</div>
+    <div class="sub-element">浮动子元素</div>
+  </div>
+
+  <br>
+  <p>说明：</p>
+  <p>1.BFC元素，能够识别浮动子元素，浮动子元素参与BFC元素的高度计算,不会出现父元素"高度塌陷"问题；</p>
+  <p>2.普通快级元素，不能够识别子元素，会出现父元素"高度塌陷"问题；</p>
+  
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3. 占据文档流的BFC元素（可使用overflow: auto创建BFC）能够识别浮动的兄弟元素.html</title>
+  <style>
+   * {
+     margin: 0;
+     padding: 0;
+   }
+   body {
+     padding-left: 20px;
+   }
+   .wrapper {
+     margin-top: 10px;
+     border: 1px solid red;
+   }
+   .common-block-element {
+     display: block;
+     height: 40px;
+     width: 400px;
+     background: yellow;
+   }
+   .bfc {
+     overflow: auto;
+   }
+   .float-element {
+     float: left;
+     height: 20px;
+     background: green;
+   }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="float-element">浮动的兄弟元素</div>
+    <div class="common-block-element">普通快级元素</div>
+  </div>
+
+  <div class="wrapper">
+    <div class="float-element">浮动的兄弟元素</div>
+    <div class="common-block-element bfc">BFC元素（width: 400px）</div>
+  </div>
+
+  <br>
+  <p>说明：</p>
+  <p>1. 普通快级元素，不能够识别浮动的兄弟元素，会被浮动的兄弟元素覆盖部分内容；</p>
+  <p>2. 占据文档流动的BFC元素（可使用overflow: auto创建BFC），能够识别浮动的兄弟元素，不会被浮动的兄弟元素覆盖，与之同行显示；</p>
+
+
+</body>
+</html>

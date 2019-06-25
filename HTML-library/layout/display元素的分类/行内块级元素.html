@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>行内快级元素</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .inline-block-level {
+      display: inline-block;
+      /* display: inline-table; */
+      /* display: inline-grid; */
+      /* display: list-item; */
+      background: yellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="inline-block-level">inline-block-level</div>
+  <div class="inline-block-level">inline-block-level</div>
+  <div class="inline-block-level">inline-block-level</div>
+  <div class="inline-block-level">inline-block-level</div>
+
+  <br>
+  <br>
+  <br>
+  <p>说明：</p>
+  <p>1. 排列方式与行内级元素同，不独占一行，在一行内按从左到右的顺序排列；</p>
+  <p>2. 水平和垂直方向上的对齐方式与行内级元素同；</p>
+  <p>3. 和块级元素一样，可以设置任何尺寸属性（但width默认为0）</p>
+  
+</body>
+</html>

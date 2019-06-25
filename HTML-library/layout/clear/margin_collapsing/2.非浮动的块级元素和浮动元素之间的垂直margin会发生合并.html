@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1.浮动元素之间的垂直margin不会发生合并.html</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding: 20px;
+    }
+    div {
+      width: 200px;
+      height: 150px;
+    }
+    .fl {
+      float: left;
+      border: 1px solid green;
+    }
+
+    div:nth-child(1) {
+      margin-bottom: 10px;
+    }
+
+    div:nth-child(2) {
+      margin-top: 10px;
+      clear: left;
+      float: none;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="fl">
+    <p>float: left;</p>
+    <p>margin-bottom: 10px;</p>
+  </div>
+  <div>
+    <p>float: none;</p>
+    <p>clear: left;</p>
+    <p>margin-top: 10px;</p>
+  </div>
+  <br>
+  <br>
+  <p style="clear: left">说明：</p>
+  <p>非浮动的快级元素和浮动元素之间，垂直方向上的margin会发生合并，之间的距离为10px</p>
+</body>
+</html>

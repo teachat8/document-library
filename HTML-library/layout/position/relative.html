@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>position relative</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .parent {
+      background: yellow;
+      width: 600px;
+      height: 400px;
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      background: green;
+    }
+    .relative {
+      position: relative;
+      top: 0;
+      background: red;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="grand">
+    <div class="parent">
+      <div class="son before"></div>
+      <div class="son relative"></div>
+      <div class="son after"></div>
+    </div>
+  </div>
+</body>
+</html>
